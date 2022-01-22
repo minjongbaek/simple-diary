@@ -88,3 +88,95 @@ header .head-btn-right {
 header button {
   font-family: "Nanum Gothic";
 }
+
+/* DiaryList */
+
+.DiaryList .menu-wrapper {
+  margin-top: 20px;
+  margin-bottom: 30px;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.DiaryList .menu-wrapper .right-col {
+  flex-grow: 1;
+}
+
+.DiaryList .menu-wrapper .right-col button {
+  width: 100%;
+}
+
+.DiaryList .ControlMenu {
+  margin-right: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #ececec;
+
+  padding: 10px 20px 10px 20px;
+
+  cursor: pointer;
+  font-family: "Nanum Gothic";
+  font-size: 18px;
+}
+
+/* DiaryItem */
+.DiaryItem {
+  padding-top: 15px;
+  padding-bottom: 15px;
+
+  border-bottom: 3px sold #e2e2e2;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.DiaryItem .emotion-img-wrapper {
+  cursor: pointer;
+  min-width: 120px;
+  height: 80px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+}
+
+.DiaryItem .emotion-img-wrapper-1 {
+  background-color: #64c964;
+}
+.DiaryItem .emotion-img-wrapper-2 {
+  background-color: #9dd772;
+}
+.DiaryItem .emotion-img-wrapper-3 {
+  background-color: #fdce17;
+}
+.DiaryItem .emotion-img-wrapper-4 {
+  background-color: #fd8446;
+}
+.DiaryItem .emotion-img-wrapper-5 {
+  background-color: #fd565f;
+}
+
+.DiaryItem .emotion-img-wrapper img {
+  width: 50%;
+}
+
+.DiaryItem .info-wrapper {
+  flex-grow: 1;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.DiaryItem .date {
+  font-weight: bold;
+  font-size: 25px;
+  margin-bottom: 5px;
+}
+
+.DiaryItem .content-preview {
+  font-size: 18px;
+}
+
+
+.DiaryItem .btn-wrapper {
+  min-width: 60px;
+}
