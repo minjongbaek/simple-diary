@@ -3,8 +3,6 @@ import './App.css';
 import Home from './pages/Home';
 import New from './pages/New';
 import Diary from './pages/Diary';
-import Button from './components/Button';
-import Header from './components/Header';
 import React, { useReducer, useRef } from 'react';
 
 const reducer = (state, action) => {
@@ -105,7 +103,7 @@ function App() {
 
   return (
     <DiaryStateContext.Provider value={data}>
-      <DiaryDispatchContext.Provider value={[onCreate, onRemove, onEdit]}>
+      <DiaryDispatchContext.Provider value={{ onCreate, onRemove, onEdit }}>
         <BrowserRouter>
           <div className='App'>
             {/* <Header text={'App'} leftChild={<Button text={"왼쪽 버튼"} onClick={() => alert('왼쪽 버튼 클릭')}></Button>} rightCHild={<Button text={"오른쪽 버튼"} onClick={() => alert('오른쪽 버튼 클릭')}></Button>}></Header>
