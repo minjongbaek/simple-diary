@@ -13,7 +13,7 @@ import { emotionList } from "../util/emotion";
 
 const DiaryEditor = ({ isEdit, data }) => {
   const navigate = useNavigate();
-  const { onCreate, onEdit } = useContext(DiaryDispatchContext);
+  const { onCreate, onEdit, onRemove } = useContext(DiaryDispatchContext);
 
   const contentRef = useRef();
   const [content, setContent] = useState("");
@@ -32,6 +32,13 @@ const DiaryEditor = ({ isEdit, data }) => {
     setEmotion(emotion);
   };
 
+  const handleRemove = () => {
+    if (window.confirm("일기를 삭제합니다.")) {
+      onRemove(data.id);
+      navigate("/", { replace: true });
+    }
+  };
+
   const handleSubmit = () => {
     if (content.length < 1) {
       contentRef.current.focus();
@@ -46,12 +53,16 @@ const DiaryEditor = ({ isEdit, data }) => {
       }
     } else {
     }
-    navigate("/", { replace: true });
+    navigate(-1, { replace: true });
   };
 
   return (
     <div className="DiaryEditor">
-      <Header text={isEdit ? "일기 수정하기" : "새 일기쓰기"} leftChild={<Button text={"< 뒤로가기"} onClick={() => navigate(-1)}></Button>}></Header>
+      <Header
+        text={isEdit ? "일기 수정하기" : "새 일기쓰기"}
+        leftChild={<Button text={"< 뒤로가기"} onClick={() => navigate(-1)}></Button>}
+        rightChild={isEdit && <Button text={"삭제하기"} type={"negative"} onClick={handleRemove}></Button>}
+      ></Header>
       <div>
         <section>
           <h4>오늘은 언제인가요?</h4>
