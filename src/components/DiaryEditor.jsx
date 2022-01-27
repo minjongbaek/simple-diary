@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef, useState } from "react";
+import React, { useCallback, useContext, useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import Header from "./Header";
@@ -28,9 +28,10 @@ const DiaryEditor = ({ isEdit, data }) => {
     }
   }, [isEdit, data]);
 
-  const handleClickEmotion = (emotion) => {
+  
+  const handleClickEmotion = useCallback((emotion) => {
     setEmotion(emotion);
-  };
+  }, []);
 
   const handleRemove = () => {
     if (window.confirm("일기를 삭제합니다.")) {

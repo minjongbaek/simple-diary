@@ -11,8 +11,8 @@ const DiaryItem = ({ id, content, emotion, date }) => {
   };
 
   const goEdit = () => {
-    navigate(`/diary/${id}?mode=edit`)
-  }
+    navigate(`/diary/${id}?mode=edit`);
+  };
 
   return (
     <div className="DiaryItem">
@@ -30,4 +30,4 @@ const DiaryItem = ({ id, content, emotion, date }) => {
   );
 };
 
-export default DiaryItem;
+export default React.memo(DiaryItem);
